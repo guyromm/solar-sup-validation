@@ -1,1 +1,17 @@
- [//]: # AI write a description for the repo
+# Solar-Powered SUP Calculator
+
+A React-based calculator for analyzing solar-powered Stand-Up Paddleboard (SUP) performance metrics. This tool helps users evaluate and compare different solar SUP configurations with the following features:
+
+- Power flow analysis from solar panels through system components
+- Performance calculations including speed, efficiency, and mechanical power
+- Component comparison between budget and premium configurations
+- Seasonal performance adjustments (winter vs summer conditions)
+- Bilingual interface (English/Russian)
+- Real-time calculations for:
+  - Solar power stages and losses
+  - Hull speed limits
+  - Motor performance
+  - Inflation time estimates
+  - System costs
+
+Built with React and features responsive design with an intuitive user interface.
