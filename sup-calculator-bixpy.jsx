@@ -1,4 +1,4 @@
-
+// AI put description in README.org
 const PhysicsCalculator = () => {
   const [isSummer, setIsSummer] = useState(false);
   const [isPremium, setIsPremium] = useState(false);
