@@ -108,7 +108,7 @@ const PhysicsCalculator = () => {
         price: 400,
         efficiency: 0.60,
         thrust_lbs: 30,
-        max_speed: 2.8,
+        max_speed: 3.0,  // Adjusted relative to new Bixpy baseline
         weight_kg: 2.5
       },
       pump: {
@@ -135,11 +135,11 @@ const PhysicsCalculator = () => {
         efficiency: 0.95
       },
       motor: {
-        name: "Bixpy J-2 Outboard",
+        name: "Bixpy K-1 Outboard",
         price: 800,
         efficiency: 0.85,
         thrust_lbs: 33,
-        max_speed: 3.3,
+        max_speed: 3.56,  // 4.1 mph converted to knots
         weight_kg: 1.6
       },
       pump: {
@@ -189,7 +189,10 @@ const PhysicsCalculator = () => {
     const available_mechanical_power = stages.final * config.motor.efficiency * propEfficiency;
     
     const power_ratio = Math.min(1, available_mechanical_power / CONSTANTS.FULL_POWER_CONSUMPTION);
-    const speed_knots = config.motor.max_speed * Math.pow(power_ratio, 0.33);
+    // Adjusted power curve to match observed behavior:
+    // - Quick ramp up to ~80% of max speed
+    // - Then slower increase to max
+    const speed_knots = config.motor.max_speed * (0.8 * Math.pow(power_ratio, 0.25) + 0.2 * power_ratio);
     
     const inflation_time = (config.pump.power_draw / stages.final) * CONSTANTS.BASE_INFLATION_TIME;
 
