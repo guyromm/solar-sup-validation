@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 
 const PhysicsCalculator = () => {
   const [isSummer, setIsSummer] = useState(false);
@@ -299,4 +298,3 @@ const PhysicsCalculator = () => {
   );
 };
 
-export default PhysicsCalculator;
